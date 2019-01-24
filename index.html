@@ -10,14 +10,26 @@
 </head>
 
 <body>
-<div id="app"></div>
-<script type="text/babel">
+    <div id="app"></div>
+    <script type="text/babel">
     class App extends React.Component{
+        state={
+            name:'jawwad',
+            age:30,
+        }
+        handleClick = (e) => {
+console.log(e.target)
+console.log(this.state)
+this.setState({name:'osama'})
+        }
         render(){
             return(
                 <div className="app-content">
                 <h1>Hey , Ninjas</h1>
                 <p>{Math.random() * 10 }</p>
+                <p>My name is {this.state.name}</p>
+                <button onClick={this.handleClick}>Click me</button>
+                <button onMouseOver={this.handleClick}>Hover </button>
                 </div>
             )
         }
